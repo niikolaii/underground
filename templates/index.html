@@ -1,0 +1,23 @@
+{% extends "extends.html" %}
+{% block body %}
+    <div>
+        {% if title not in plist %}
+            <div id="jo">
+
+                <div/>
+            {% for x in plist%}
+                <script>
+                var name = '{{  x  }}'.replace("_"," ").replace("'","");
+
+
+                $('#jo').append("<li> <a href = '{{ x }}'> <h style='padding-left:30px'>'" +name.replace("'"," ") + "</h></li>")
+                </script>
+
+            {% endfor %}
+        {% else %}
+            {% for x in plist[title]%}
+            <h1>{{ x }}</h1>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
